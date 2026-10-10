@@ -1,0 +1,630 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f5efff;
+  background:
+    radial-gradient(ellipse at 50% 20%, #38204c 0%, transparent 50%),
+    linear-gradient(135deg, #10091c, #211333, #301548);
+  background-attachment: fixed;
+  transition: background .4s, color .4s;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 22px 8%;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  color: #e1c4ff;
+  font-size: 15px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #cf9aff;
+}
+
+button {
+  font-family: inherit;
+}
+
+.boton-tema {
+  border: 1px solid #77528d;
+  border-radius: 25px;
+  padding: 10px 16px;
+  background: #2b1a3b;
+  color: #ead8ff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.boton-tema:hover {
+  background: #49305f;
+  transform: translateY(-2px);
+}
+
+#inicio {
+  width: min(1000px, 88%);
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+/* Portada principal */
+.portada {
+  min-height: 510px;
+  padding: 75px 15px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sobrelinea,
+.etiqueta {
+  color: #d4a9ff;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: 1.8;
+}
+
+.portada h1 {
+  margin: 25px 0 20px;
+  color: #fff5ff;
+  font-size: clamp(35px, 6vw, 65px);
+  line-height: 1.15;
+  letter-spacing: 2px;
+  text-shadow: 0 0 35px #b779ef30;
+}
+
+.portada h1 span {
+  display: block;
+  margin-top: 12px;
+  color: #d2a1ff;
+  font-size: .68em;
+  letter-spacing: 1px;
+}
+
+.subtitulo {
+  max-width: 520px;
+  margin: 0 auto 30px;
+  color: #cdbbdc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.boton-principal {
+  border: 1px solid #d7b3ff55;
+  border-radius: 30px;
+  padding: 14px 25px;
+  background: linear-gradient(135deg, #b77af0, #7738a4);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: .3px;
+  cursor: pointer;
+  box-shadow: 0 8px 30px #9c58c744;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.boton-principal:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px #a768db66;
+}
+
+.boton-principal:active {
+  transform: scale(.97);
+}
+
+.boton-principal span {
+  margin-left: 8px;
+}
+
+.indicador {
+  margin-top: 65px;
+  color: #a995ba;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.indicador span {
+  display: block;
+  margin-bottom: 10px;
+  color: #d3a7ff;
+  font-size: 24px;
+  animation: bajar 1.6s infinite;
+}
+
+/* Destellos suaves */
+.brillo {
+  position: absolute;
+  border-radius: 50%;
+  background: #d2a1ff;
+  filter: blur(55px);
+  opacity: .12;
+  pointer-events: none;
+}
+
+.brillo-uno {
+  width: 190px;
+  height: 190px;
+  top: 40px;
+  left: 5%;
+}
+
+.brillo-dos {
+  width: 160px;
+  height: 160px;
+  right: 4%;
+  bottom: 55px;
+  background: #8e52d0;
+}
+
+/* Tarjeta con tu explicación */
+.tarjeta {
+  position: relative;
+  max-width: 790px;
+  margin: 15px auto 0;
+  padding: 38px 42px;
+  overflow: hidden;
+  border: 1px solid #68487b;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #21152e, #191021);
+  box-shadow: 0 20px 65px #00000028;
+}
+
+.decoracion-tarjeta {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  color: #a36acb;
+  opacity: .16;
+  font-size: 100px;
+  pointer-events: none;
+}
+
+.tarjeta .etiqueta {
+  margin: 0 0 15px;
+}
+
+.tarjeta h2 {
+  max-width: 650px;
+  margin: 0;
+  color: #f2e4ff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 3.4vw, 34px);
+  line-height: 1.4;
+}
+
+.separador {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 22px 0;
+  color: #c89bea;
+}
+
+.separador::before,
+.separador::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #77528d);
+}
+
+.separador::after {
+  background: linear-gradient(90deg, #77528d, transparent);
+}
+
+.texto-historia {
+  color: #d7c8e2;
+  font-size: 15px;
+  line-height: 2;
+  margin: 0 0 16px;
+}
+
+.texto-historia em {
+  color: #e2baff;
+}
+
+.firma {
+  margin: 25px 0;
+  color: #d9b1fa;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-style: italic;
+  text-align: right;
+}
+
+/* Zona del ramo */
+#pantalla-flor {
+  padding: 30px 15px 60px;
+  text-align: center;
+  animation: aparecer .7s ease both;
+}
+
+.titulo-regalo {
+  margin: 15px auto 5px;
+}
+
+.titulo-regalo h2 {
+  margin: 10px 0;
+  color: #f4e5ff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 4vw, 38px);
+}
+
+.titulo-regalo > p:last-child {
+  color: #cdb9df;
+  font-size: 15px;
+}
+
+.escena-flor {
+  width: 100%;
+  max-width: 570px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.ramo-realista {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 14px 22px #19082840);
+  animation: aparecerRamo 1.2s ease both;
+}
+
+.mensaje-final {
+  margin: 10px auto 25px;
+  color: #e5c4ff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.7;
+}
+
+.mensaje-final span {
+  display: block;
+  color: #cdb6e0;
+  font-size: 15px;
+}
+
+/* Pie de página */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 25px 15px;
+  color: #a995b8;
+  font-size: 12px;
+  letter-spacing: .5px;
+}
+
+.corazon-footer {
+  color: #c18ae8;
+}
+
+/* Tema claro */
+body.claro {
+  color: #382348;
+  background:
+    radial-gradient(ellipse at 50% 20%, #f0dcff 0%, transparent 55%),
+    linear-gradient(135deg, #fff8ff, #f0e1fa, #e4d0f5);
+  background-attachment: fixed;
+}
+
+body.claro .logo {
+  color: #753e99;
+}
+
+body.claro .portada h1 {
+  color: #4a285f;
+}
+
+body.claro .portada h1 span {
+  color: #8747b4;
+}
+
+body.claro .sobrelinea,
+body.claro .etiqueta {
+  color: #8747b4;
+}
+
+body.claro .subtitulo {
+  color: #654d75;
+}
+
+body.claro .boton-tema {
+  color: #57356c;
+  background: #f6eaff;
+  border-color: #c8a4e1;
+}
+
+body.claro .indicador {
+  color: #795e8b;
+}
+
+body.claro .tarjeta {
+  background: linear-gradient(145deg, #fffaff, #f8edff);
+  border-color: #d5b5e8;
+  box-shadow: 0 20px 55px #6e438b15;
+}
+
+body.claro .tarjeta h2 {
+  color: #4d2b60;
+}
+
+body.claro .texto-historia {
+  color: #594365;
+}
+
+body.claro .texto-historia em,
+body.claro .firma {
+  color: #8747b4;
+}
+
+body.claro .titulo-regalo h2 {
+  color: #4d2b60;
+}
+
+body.claro .titulo-regalo > p:last-child {
+  color: #654d75;
+}
+
+body.claro .mensaje-final {
+  color: #753e99;
+}
+
+body.claro .mensaje-final span {
+  color: #654d75;
+}
+
+body.claro footer {
+  color: #795e8b;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Animaciones originales */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecerRamo {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bajar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+@media (max-width: 600px) {
+  .encabezado {
+    padding: 18px 5%;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .boton-tema {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  #inicio {
+    width: 90%;
+  }
+
+  .portada {
+    min-height: 440px;
+    padding-top: 50px;
+  }
+
+  .sobrelinea,
+  .etiqueta {
+    letter-spacing: 2px;
+    font-size: 10px;
+  }
+
+  .subtitulo {
+    font-size: 15px;
+  }
+
+  .indicador {
+    margin-top: 45px;
+  }
+
+  .tarjeta {
+    padding: 25px 22px;
+  }
+
+  .tarjeta h2 {
+    font-size: 25px;
+  }
+
+  .texto-historia {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .escena-flor {
+    max-width: 420px;
+  }
+
+  .mensaje-final {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==================================================
+   NUEVO: CUADROS ROMÁNTICOS
+   Se agregan sin modificar el dibujo original.
+   ================================================== */
+
+.distribucion-regalo {
+  width: 100%;
+  max-width: 1000px;
+  margin: 15px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.distribucion-regalo .escena-flor {
+  flex: 1 1 570px;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+}
+
+.tarjeta-joss,
+.tarjeta-poema {
+  padding: 25px;
+  border: 1px solid #68487b;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #21152e, #191021);
+  box-shadow: 0 15px 40px #00000025;
+  text-align: center;
+  animation: aparecer .7s ease both;
+}
+
+.tarjeta-joss {
+  flex: 0 1 290px;
+}
+
+.tarjeta-poema {
+  width: 100%;
+  max-width: 650px;
+  margin: 25px auto;
+  animation-delay: .15s;
+}
+
+.tarjeta-joss h3,
+.tarjeta-poema h3 {
+  color: #e2baff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  margin: 12px 0;
+}
+
+.tarjeta-joss p,
+.tarjeta-poema p {
+  color: #d7c8e2;
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.adorno-cuadro {
+  font-size: 23px;
+}
+
+.separador-cuadro {
+  color: #c89bea;
+  margin: 18px 0;
+  letter-spacing: 3px;
+}
+
+.tarjeta-poema .poema-joss {
+  color: #e2baff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+/* Cuadros cuando se activa el tema claro */
+body.claro .tarjeta-joss,
+body.claro .tarjeta-poema {
+  background: linear-gradient(145deg, #fffaff, #f8edff);
+  border-color: #d5b5e8;
+}
+
+body.claro .tarjeta-joss h3,
+body.claro .tarjeta-poema h3,
+body.claro .tarjeta-poema .poema-joss {
+  color: #753e99;
+}
+
+body.claro .tarjeta-joss p,
+body.claro .tarjeta-poema p {
+  color: #594365;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 650px) {
+  .distribucion-regalo {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .distribucion-regalo .escena-flor {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .tarjeta-joss,
+  .tarjeta-poema {
+    width: 100%;
+    max-width: 420px;
+    padding: 22px 18px;
+  }
+}
